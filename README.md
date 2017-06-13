@@ -1,6 +1,6 @@
-# 0212VF-qliksense-deploy
+# QlikSense deploy
 
-## This is to be used with [qliksense-template](https://github.com/ahmednuaman/qliksense-template)!
+*This is to be used with [qliksense-template](https://github.com/ahmednuaman/qliksense-template) or [qliksense-extension](https://github.com/ahmednuaman/qliksense-extension)!*
 
 ## How to use
 `HOST=http://qliksense-host/static_user/qrs/ USERID=QRS-USER MASHUP=yes qliksense-deploy`
