@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
-require('colors')
-
 const async = require('async')
+const colors = require('colors')
 const fs = require('fs')
 const glob = require('glob')
 const path = require('path')
@@ -100,8 +99,8 @@ if (MASHUP) {
 
 async.series(requests, (error) => {
   if (error) {
-    console.log(error.red)
+    console.log(colors.red(error))
   } else {
-    console.log('All files successfully deployed'.bold.green)
+    console.log(colors.bold.green('All files successfully deployed'))
   }
 })
