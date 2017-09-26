@@ -63,8 +63,8 @@ requests.push((done) => {
 })
 
 if (MASHUP) {
-  if (!PKG.deploy || !PKG.deploy.id || !PKG.deploy.cdn) {
-    throw new Error('Missing deploy: { id, cdn } config in package.json')
+  if (!PKG.deploy || !PKG.deploy.id) {
+    throw new Error('Missing deploy: { id } config in package.json')
   }
 
   const content = request.defaults({
