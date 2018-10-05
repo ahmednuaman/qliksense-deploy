@@ -13,3 +13,5 @@ Environment variable `MASHUP` is optional, but if it is defined then you need to
   "cdn": "mashup_unique_id_content" // same as id except snake case with _content at the end
 }
 ```
+
+You can also pass `PKG_NAME` as an envrionment variable to override using the `name` property in `package.json`

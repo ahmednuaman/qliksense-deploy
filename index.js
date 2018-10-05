@@ -17,7 +17,9 @@ const XRF_KEY = require('randomstring').generate({
   length: 16,
   charset: 'alphanumeric'
 })
-const ZIP_FILE = `${PKG.name}.zip`
+
+const PKG_NAME = process.env.PKG_NAME || PKG.name
+const ZIP_FILE = `${PKG_NAME}.zip`
 
 let requests = []
 
@@ -36,8 +38,8 @@ const extension = request.defaults({
 })
 
 requests.push((done) => {
-  extension.delete(`name/${PKG.name}`, (error) => {
-    console.log(`Successfully deleted old extension ${PKG.name}`)
+  extension.delete(`name/${PKG_NAME}`, (error) => {
+    console.log(`Successfully deleted old extension ${PKG_NAME}`)
     done(error)
   })
 })
@@ -54,9 +56,9 @@ requests.push((done) => {
         })
       })
       .on('error', (error) => done(error.toString()))
-      .on('data', (data) => console.log(PKG.name, data.toString()))
+      .on('data', (data) => console.log(PKG_NAME, data.toString()))
       .on('response', (response) => {
-        console.log(`Successfully deployed extension ${PKG.name}`, response.statusCode)
+        console.log(`Successfully deployed extension ${PKG_NAME}`, response.statusCode)
         done()
       })
   )
